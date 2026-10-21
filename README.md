@@ -1,7 +1,6 @@
 # Hostel-Manager
 better app for hostel management where you can find every usefull feature on it
 
-
 #  Smart Hostel Management System
 
 **A centralized platform to simplify hostel operations, improve student services, and make hostel management more transparent.**
@@ -71,7 +70,7 @@ A proposed visual dashboard that highlights rooms according to their complaint s
 
 The heatmap can help administrators identify recurring problems and prioritize inspections. Final colour rules should consider unresolved complaints and severity, not just total complaint count.
 
-###  5. Student Dashboard
+### 5. Student Dashboard
 
 - View room and booking details.
 - Check fee status.
@@ -93,7 +92,7 @@ The heatmap can help administrators identify recurring problems and prioritize i
 - Manage complaints and maintenance.
 - Monitor payment records.
 - View hostel activity and reports.
-  
+
 ##  Future Enhancements
 
 The following features are planned for future development:
@@ -112,3 +111,155 @@ The following features are planned for future development:
 ##  Proposed Technology Stack
 
 | Technology | Purpose |
+|---|---|
+| HTML, CSS, JavaScript / React | Frontend interface |
+| Java | Backend programming |
+| Spring Boot | REST APIs and business logic |
+| MySQL | Database management |
+| Spring Security | Authentication and authorization |
+| JWT | Token-based authentication |
+| Git & GitHub | Version control and collaboration |
+
+*The final stack may change depending on the actual implementation.*
+
+##  System Architecture
+
+```text
+Student / Parent / Warden / Admin
+                |
+                v
+       Web Application UI
+                |
+                v
+       Spring Boot REST API
+                |
+                v
+        Business Logic Layer
+                |
+                v
+           MySQL Database
+                |
+                v
+ Bookings | Fees | Complaints | Users
+```
+
+##  Main Modules
+
+1. **User Management** — user accounts, login, and role-based permissions.
+2. **Room Management** — rooms, beds, facilities, and occupancy.
+3. **Booking Management** — booking requests, approval, and allocation.
+4. **Fee Management** — dues, payment records, and receipts.
+5. **Complaint Management** — complaint submission, assignment, and resolution.
+6. **Heatmap & Reporting** — room-level complaint visualization and management reports.
+7. **Notifications** — alerts for booking decisions, payments, and complaint updates.
+
+##  Proposed Database Entities
+
+The database may include the following tables:
+
+- `users` — student, parent, warden, and admin accounts.
+- `hostels` — hostel details.
+- `rooms` — room information and capacity.
+- `beds` — individual bed availability and allocation.
+- `bookings` — booking requests and approval status.
+- `payments` — fee and transaction records.
+- `complaints` — complaint descriptions, categories, priority, and status.
+- `notifications` — user alerts and updates.
+- `visitors` — visitor records, if the visitor module is implemented.
+
+Relationships and fields will be finalized during database design.
+
+##  Getting Started
+
+Once the project source code is available, follow these general steps.
+
+### Prerequisites
+
+- Java JDK (version compatible with the project).
+- MySQL Server.
+- Maven, if the project uses Maven.
+- Node.js and npm, if the frontend requires them.
+- Git.
+
+### Installation
+
+**1. Clone the repository**
+
+```bash
+git clone <YOUR_REPOSITORY_URL>
+cd <YOUR_PROJECT_DIRECTORY>
+```
+
+**2. Configure the database**
+
+Create a MySQL database and configure the database connection in the Spring Boot application's environment or configuration file.
+
+**3. Start the backend**
+
+For a Maven-based Spring Boot project:
+
+```bash
+mvn spring-boot:run
+```
+
+**4. Start the frontend**
+
+If the frontend is a separate Node.js application:
+
+```bash
+npm install
+npm run dev
+```
+
+Check the actual project configuration before running these commands. The application cannot run from this README alone; the source code and configuration must be present.
+
+##  Development Roadmap
+
+- [ ] Design the user interface.
+- [ ] Implement authentication and role-based access.
+- [ ] Develop room and bed management.
+- [ ] Implement booking requests and approval.
+- [ ] Build the complaint management system.
+- [ ] Develop the room complaint heatmap.
+- [ ] Integrate the database.
+- [ ] Add fee tracking and payment integration.
+- [ ] Implement notifications.
+- [ ] Test the application and deploy it.
+
+##  Security Considerations
+
+- Restrict dashboards according to user roles.
+- Protect personal and financial information.
+- Validate all user inputs.
+- Prevent unauthorized room allocation and duplicate bookings.
+- Never store raw passwords or payment card details.
+- Use secure payment gateway integrations for actual transactions.
+
+##  Screenshots
+
+Screenshots of the home page, student dashboard, room booking interface, complaint management, and room heatmap will be added here as the UI develops.
+
+##  Contributing
+
+Contributions and suggestions are welcome.
+
+1. Fork the repository.
+2. Create a feature branch.
+3. Commit your changes with descriptive messages.
+4. Submit a pull request.
+
+##  Project Status
+
+**Status:** Planned / under development — update this section according to the actual implementation.
+
+The project aims to deliver a functional hostel management platform with room booking, complaint tracking, and administrative dashboards before expanding into advanced modules.
+
+##  Author
+
+**Project:** Smart Hostel Management System
+
+**Domain:** Web Development | Java Backend | Database Management
+
+---
+
+*Built to make hostel life and hostel administration easier.* 🏨
